@@ -5,7 +5,6 @@ function MealsDetailed({ duration, ingredients, steps }) {
   return (
     <View>
       <View>
-        <Text style={styles.mealItem}>Duration : {duration}</Text>
         <Subtitle>Ingredients </Subtitle>
         <List data={ingredients} />
         <Subtitle>Steps</Subtitle>
