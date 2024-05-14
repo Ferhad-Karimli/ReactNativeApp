@@ -15,7 +15,7 @@ function MealsDetailedScreen({ route, navigation }) {
   return (
     <View>
       <MealsDetailed
-        image={item.image}
+        image={item.imageUrl}
         title={item.title}
         duration={item.duration}
         ingredients={item.ingredients}

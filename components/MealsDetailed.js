@@ -1,23 +1,38 @@
-import { View, Pressable, Text, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, ScrollView } from "react-native";
 import List from "./mealDetail/List";
 import Subtitle from "./mealDetail/Subtitle";
-function MealsDetailed({ duration, ingredients, steps }) {
+function MealsDetailed({ image, ingredients, steps }) {
   return (
-    <View>
+    <ScrollView>
       <View>
-        <Subtitle>Ingredients </Subtitle>
-        <List data={ingredients} />
-        <Subtitle>Steps</Subtitle>
-        <List data={steps} />
+        <View style={styles.imageContainer}>
+          <Image source={{ uri: image }} style={styles.image} />
+        </View>
+        <View>
+          <Subtitle>Ingredients </Subtitle>
+          <List data={ingredients} />
+          <Subtitle>Steps</Subtitle>
+          <List data={steps} />
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
 export default MealsDetailed;
 
 const styles = StyleSheet.create({
-  image: { width: "100%", height: 180 },
+  imageContainer: {
+    marginHorizontal: 12,
+  },
+  image: {
+    width: "100%",
+    height: 180,
+    // margin: 20,
+    marginVertical: 8,
+    // marginHorizontal: ,
+    // marginLeft: 6,
+  },
   title: {
     fontWeight: "bold",
     fontSize: 18,
