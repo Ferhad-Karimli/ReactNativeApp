@@ -4,11 +4,14 @@ import Subtitle from "../components/mealDetail/Subtitle";
 import MealsDetailed from "../components/MealsDetailed";
 import { MEALS } from "../data/dummy-data";
 
-function MealsDetailedScreen({ route }) {
+function MealsDetailedScreen({ route, navigation }) {
   const mealId = route.params.mealId;
 
   const item = MEALS?.find((category) => category?.id == mealId);
 
+  navigation.setOptions({
+    title: item.title,
+  });
   return (
     <View>
       <MealsDetailed
